@@ -218,3 +218,11 @@ export default function CareerPage({ params }: { params: { slug: string } }) {
     </PageLayout>
   );
 }
+export async function generateStaticParams() {
+  // Возвращаем список всех возможных slug-ов
+  // Например, это создаст страницы /career/developer и /career/manager
+  return [
+    { slug: 'developer' },
+    { slug: 'manager' },
+  ];
+}
