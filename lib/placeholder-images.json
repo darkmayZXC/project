@@ -1,0 +1,10 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-career-guidance",
+      "description": "A compass on a table, symbolizing career guidance.",
+      "imageUrl": "/career-compass.png",
+      "imageHint": "career compass"
+    }
+  ]
+}

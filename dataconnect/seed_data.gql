@@ -1,0 +1,54 @@
+mutation CreateSeedData @transaction @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      displayName: "demouser1",
+      createdAt: "2024-04-26T12:00:00Z",
+      email: "demo1@example.com",
+      photoUrl: "https://example.com/photo1.jpg"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      displayName: "demouser2",
+      createdAt: "2024-04-26T13:00:00Z",
+      email: "demo2@example.com",
+      photoUrl: "https://example.com/photo2.jpg"
+    }
+  ])
+  taskList_insertMany(data: [
+    {
+      id: "650e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      name: "Demo List 1",
+      createdAt: "2024-04-26T14:00:00Z",
+      description: "Example list from demouser1"
+    },
+    {
+      id: "650e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      name: "Demo List 2",
+      createdAt: "2024-04-26T15:00:00Z",
+      description: "Example list from demouser2"
+    }
+  ])
+  task_insertMany(data: [
+    {
+      id: "750e8400-e29b-41d4-a716-446655440000",
+      taskListId: "650e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      title: "Demo Task 1",
+      createdAt: "2024-04-26T16:00:00Z",
+      description: "Example task from demouser1",
+      isCompleted: false
+    },
+    {
+      id: "750e8400-e29b-41d4-a716-446655440001",
+      taskListId: "650e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      title: "Demo Task 2",
+      createdAt: "2024-04-26T17:00:00Z",
+      description: "Example task from demouser2",
+      isCompleted: true
+    }
+  ])
+}
